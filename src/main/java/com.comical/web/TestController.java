@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/test")
 public class TestController {
     @RequestMapping(value = "/index")
     public String play(
