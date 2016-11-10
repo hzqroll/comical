@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
 <sqlMap namespace="ChushouUserProfileDao">
-    <typeAlias alias="ChushouUserEntity" type="com.kascend.jellyfish.server.user.open.chushou.ChushouUser" />
+    <typeAlias alias="ChushouUserEntity" type="com.comical.business.user.User" />
 
     <resultMap id="ChushouUserResult" class="ChushouUserEntity">
-        <result property="uid" column="uid" />
-        <result property="username" column="username" />
-        <result property="password" column="password" />
+        <result property="userId" column="uid" />
     </resultMap>
 
     <insert id="insert" parameterClass="Map">
