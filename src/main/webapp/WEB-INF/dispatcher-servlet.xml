@@ -40,10 +40,10 @@
     </bean>
 
 
-    <bean id="comicalEventDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    <!--<bean id="comicalEventDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
           destroy-method="close">
         <property name="driverClass" value="com.mysql.jdbc.Driver" />
-        <property name="jdbcUrl" value="jdbc:mysql://127。0.0.1:3306/comical" />
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/comical" />
         <property name="user" value="root" />
         <property name="password" value="123456" />
         <property name="initialPoolSize" value="20" />
@@ -57,9 +57,9 @@
         <property name="dataSource" ref="comicalEventDataSource" />
     </bean>
 
-    <bean id="comicalEventSqlMapClientTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+    <bean id="comicalEventSqlMapClientTemplate1" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
         <property name="sqlMapClient" ref="comicalEventSqlMapClient" />
-    </bean>
+    </bean>-->
     
 
 </beans>

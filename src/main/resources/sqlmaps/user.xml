@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="ChushouUserProfileDao">
+    <typeAlias alias="ChushouUserEntity" type="com.kascend.jellyfish.server.user.open.chushou.ChushouUser" />
+
+    <resultMap id="ChushouUserResult" class="ChushouUserEntity">
+        <result property="uid" column="uid" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+    </resultMap>
+
+    <insert id="insert" parameterClass="Map">
+        <![CDATA[
+			insert into `chushou_user_profile`
+				(`uid`, `username`, `password`, `created_time`, `updated_time`)
+			values
+				(#uid#, #username#, #password#, #createdTime#, #updatedTime#)
+        ]]>
+    </insert>
+
+    <select id="getByUsername" resultMap="ChushouUserResult" parameterClass="String">
+        <![CDATA[
+		select `uid`, `username`, `password`
+		from `chushou_user_profile`
+		where `username` = #username#
+		]]>
+    </select>
+
+    <select id="getByUid" resultMap="ChushouUserResult" parameterClass="long">
+        <![CDATA[
+		select `uid`, `username`, `password`
+		from `chushou_user_profile`
+		where `uid` = #uid#
+		]]>
+    </select>
+
+    <update id="updatePassword" parameterClass="Map">
+        <![CDATA[
+		update `chushou_user_profile`
+		set `password` = #password#,
+			`updated_time` = #updatedTime#
+		where `uid` = #uid#
+		]]>
+    </update>
+</sqlMap>
